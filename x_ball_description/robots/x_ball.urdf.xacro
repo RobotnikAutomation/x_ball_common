@@ -50,7 +50,8 @@
 	<!-- Summit X base -->
 	<!-- this base already includes the Axis camera and Hokuyo laser sensors -->
 	<xacro:summit_x_base name="summit_xl" publish_bf="true" />
-  
+
+
 	<!-- Gazebo ros control pluggins -->
 	<xacro:ros_control/>
 	
@@ -81,6 +82,12 @@
 		<origin xyz="-${wheel_offset_x} -${wheel_offset_y} ${wheel_offset_z}" rpy="0 0 0"/>
 	</xacro:omni_wheel>
 
+
+	<!-- ARM -->
+ 	<xacro:schunk_lwa4p name="arm" parent="rover_link" has_podest="true">
+		<origin xyz="-0.1 0 0.19" rpy="0 0 0" />
+	</xacro:schunk_lwa4p>
+	
 
 
 	<!-- SENSORS -->
@@ -132,10 +139,6 @@
 	</xacro:sensor_fotonic>  
 -->
 
-	<!-- arm -->
- 	<xacro:schunk_lwa4d name="arm" parent="rover_link" has_podest="true">
-		<origin xyz="0 0 0.026" rpy="0 0 0" /> <!--slightly above gazebo plane-->
-	</xacro:schunk_lwa4d>
   
 	
 </robot>
