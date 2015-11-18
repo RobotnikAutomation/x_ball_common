@@ -22,6 +22,10 @@
 	<xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 	<xacro:include filename="$(find schunk_description)/urdf/lwa4p/lwa4p.urdf.xacro" />
 
+	<!-- Import PG70 gripper -->
+	<xacro:include filename="$(find schunk_description)/urdf/pg70/pg70.urdf.xacro" />
+
+
 
 	<!-- ***************** -->
 	<!-- Global parameters -->
@@ -86,7 +90,10 @@
 		<origin xyz="-0.1 0 0.19" rpy="0 0 0" />
 	</xacro:schunk_lwa4p>
 	
-
+	<!-- gripper -->
+	<xacro:schunk_pg70 name="pg70" parent="arm_6_link">
+		<origin xyz="0 0 0.075" rpy="0 0 0" />
+	</xacro:schunk_pg70>
 
 	<!-- SENSORS -->
 
